@@ -875,7 +875,6 @@ class PhoneInput extends React.Component {
     const arrowClasses = classNames({'arrow': true, 'up': showDropdown});
     const inputClasses = classNames({
       [this.props.inputClass]: true,
-      'form-control': true,
       'invalid-number': !this.props.isValid(formattedNumber.replace(/\D/g, ''))
     });
 
@@ -890,24 +889,8 @@ class PhoneInput extends React.Component {
       <div
         className={this.props.containerClass}
         style={this.props.containerStyle}
-        onKeyDown={this.handleKeydown}>
-        <input
-          className={inputClasses}
-          id='phone-form-control'
-          style={this.props.inputStyle}
-          onChange={this.handleInput}
-          onClick={this.handleInputClick}
-          onFocus={this.handleInputFocus}
-          onBlur={this.handleInputBlur}
-          value={formattedNumber}
-          ref={el => this.numberInputRef = el}
-          onKeyDown={this.handleInputKeyDown}
-          placeholder={this.props.placeholder}
-          disabled={this.props.disabled}
-          type='tel'
-          {...this.props.inputExtraProps}
-        />
-
+        onKeyDown={this.handleKeydown}
+      >
         <div
           className={flagViewClasses}
           id='flag-dropdown'
@@ -931,6 +914,23 @@ class PhoneInput extends React.Component {
 
           {showDropdown && this.getCountryDropdownList()}
         </div>
+        <input
+          className={inputClasses}
+          id='phone-form-control'
+          style={this.props.inputStyle}
+          onChange={this.handleInput}
+          onClick={this.handleInputClick}
+          onFocus={this.handleInputFocus}
+          onBlur={this.handleInputBlur}
+          value={formattedNumber}
+          ref={el => this.numberInputRef = el}
+          onKeyDown={this.handleInputKeyDown}
+          placeholder={this.props.placeholder}
+          disabled={this.props.disabled}
+          type='tel'
+          {...this.props.inputExtraProps}
+        />
+        {this.props.label && this.props.label}
       </div>
     );
   }
