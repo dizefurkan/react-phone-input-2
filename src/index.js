@@ -892,6 +892,10 @@ class PhoneInput extends React.Component {
         onKeyDown={this.handleKeydown}
       >
         <input
+          ref={el => {
+            this.numberInputRef = el;
+            this.props.inputRef(el);
+          }}
           className={inputClasses}
           id='phone-form-control'
           style={this.props.inputStyle}
@@ -900,7 +904,6 @@ class PhoneInput extends React.Component {
           onFocus={this.handleInputFocus}
           onBlur={this.handleInputBlur}
           value={formattedNumber}
-          ref={el => this.numberInputRef = el}
           onKeyDown={this.handleInputKeyDown}
           placeholder={this.props.placeholder}
           disabled={this.props.disabled}
