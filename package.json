@@ -70,8 +70,8 @@
     "webpack-merge": "^4.2.1"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
   },
   "dependencies": {
     "classnames": "^2.2.6",
