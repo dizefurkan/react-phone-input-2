@@ -5,7 +5,9 @@ import memoize from 'lodash.memoize';
 import reduce from 'lodash.reduce';
 import startsWith from 'lodash.startswith';
 import classNames from 'classnames';
-
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import countryData from './country_data.js';
 import './style.less';
 
@@ -15,6 +17,7 @@ class PhoneInput extends React.Component {
     onlyCountries: PropTypes.arrayOf(PropTypes.string),
     preferredCountries: PropTypes.arrayOf(PropTypes.string),
     defaultCountry: PropTypes.string,
+    inputRef: PropTypes.function,
 
     value: PropTypes.string,
     placeholder: PropTypes.string,
@@ -68,6 +71,7 @@ class PhoneInput extends React.Component {
     onlyCountries: [],
     preferredCountries: [],
     defaultCountry: '',
+    inputRef: () => {},
 
     value: '',
     placeholder: '+1 (702) 123-4567',
