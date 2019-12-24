@@ -5,9 +5,7 @@ import memoize from 'lodash.memoize';
 import reduce from 'lodash.reduce';
 import startsWith from 'lodash.startswith';
 import classNames from 'classnames';
-import 'react-app-polyfill/ie9';
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
+import 'babel-polyfill';
 import countryData from './country_data.js';
 import './style.less';
 
