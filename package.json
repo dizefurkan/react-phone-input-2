@@ -59,7 +59,6 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "react-app-polyfill": "^1.0.5",
     "react-hot-loader": "^4.6.5",
     "react-testing-library": "^6.0.4",
     "style-loader": "^0.23.1",
